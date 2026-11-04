@@ -1,0 +1,85 @@
+name: Game idea
+description: Pitch a new game. Lands in Idea; a human approves it before the Planner runs.
+title: "[Idea] "
+labels: [game-idea]
+projects: ["rblx-vibecode/2"]
+body:
+  - type: input
+    id: pitch
+    attributes:
+      label: Pitch
+      description: One line.
+    validations:
+      required: true
+  - type: dropdown
+    id: horizon
+    attributes:
+      label: Term
+      description: "Short = a trend rising now, about a 2-week build. Long = a loop that supports updates for months."
+      options:
+        - short
+        - long
+    validations:
+      required: true
+  - type: textarea
+    id: trend
+    attributes:
+      label: Trend it rides
+      description: Link the digest and quote its numbers (momentum, age, stickiness).
+      placeholder: "digests/2026-45.md: concurrent players +40% 7d, `codes` interest +65% 7d, 12 days old"
+    validations:
+      required: true
+  - type: textarea
+    id: core-loop
+    attributes:
+      label: Core loop
+      description: What the player does every minute, and why they come back.
+    validations:
+      required: true
+  - type: checkboxes
+    id: kit
+    attributes:
+      label: Template features reused
+      options:
+        - label: Data saving
+        - label: Codes system
+        - label: Game passes
+        - label: Leaderboards
+        - label: Settings
+        - label: UI kit
+  - type: input
+    id: tickets
+    attributes:
+      label: Estimated tickets
+      placeholder: "~25"
+  - type: textarea
+    id: monetization
+    attributes:
+      label: Monetization
+      description: Game passes and developer products.
+  - type: textarea
+    id: risks
+    attributes:
+      label: Risks
+      description: Include IP risk. Follow mechanics; never copy names, assets or thumbnails.
+  - type: dropdown
+    id: score-momentum
+    attributes:
+      label: "Score: momentum (1-5)"
+      options: ["1", "2", "3", "4", "5"]
+    validations:
+      required: true
+  - type: dropdown
+    id: score-cost
+    attributes:
+      label: "Score: build cost (1 = expensive, 5 = cheap)"
+      options: ["1", "2", "3", "4", "5"]
+    validations:
+      required: true
+  - type: dropdown
+    id: score-fit
+    attributes:
+      label: "Score: fit (1-5)"
+      options: ["1", "2", "3", "4", "5"]
+    validations:
+      required: true

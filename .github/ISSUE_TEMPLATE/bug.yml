@@ -1,0 +1,50 @@
+name: Bug
+description: Something is broken. Lands in Triage; the Triager sets severity and routes it.
+title: "[Bug] "
+type: Bug
+labels: [bug]
+projects: ["rblx-vibecode/2"]
+body:
+  - type: input
+    id: game
+    attributes:
+      label: Game
+      placeholder: game-<slug>
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Join a fresh server
+        2. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected vs actual
+    validations:
+      required: true
+  - type: textarea
+    id: console
+    attributes:
+      label: Console output
+      render: text
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where
+      options:
+        - Studio playtest
+        - Live server
+        - CI
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Suggested severity
+      description: "P0 = data loss, exploit or crash. P1 = core loop broken. P2 = annoying. P3 = cosmetic. The Triager has the final say."
+      options: [P0, P1, P2, P3]

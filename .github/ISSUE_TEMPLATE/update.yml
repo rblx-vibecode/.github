@@ -1,0 +1,43 @@
+name: Update
+description: One release of a long-term game. Make it a sub-issue of the game-idea issue; its tasks become sub-issues of this one.
+title: "[Update] "
+labels: [update]
+projects: ["rblx-vibecode/2"]
+body:
+  - type: input
+    id: game
+    attributes:
+      label: Game
+      description: Repo name.
+      placeholder: game-<slug>
+    validations:
+      required: true
+  - type: input
+    id: name
+    attributes:
+      label: Update name
+      placeholder: "Update 1: Pets"
+    validations:
+      required: true
+  - type: input
+    id: target-date
+    attributes:
+      label: Target date
+      description: Also set the Target date field on the Project.
+      placeholder: YYYY-MM-DD
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: What ships in this update. Scope freezes when its first ticket starts; later ideas go to the next update.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Why now
+      description: Analytics or digest numbers behind this update.
+  - type: textarea
+    id: out-of-scope
+    attributes:
+      label: Out of scope

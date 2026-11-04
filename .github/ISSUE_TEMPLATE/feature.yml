@@ -1,0 +1,46 @@
+name: Feature
+description: Propose a feature for an existing game. With the feature gate on, it waits in Needs approval for a human.
+title: "[Feature] "
+type: Feature
+labels: [feature]
+projects: ["rblx-vibecode/2"]
+body:
+  - type: input
+    id: game
+    attributes:
+      label: Game
+      placeholder: game-<slug>
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why
+      description: The player problem or metric this moves.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      placeholder: |
+        - [ ] ...
+  - type: dropdown
+    id: size
+    attributes:
+      label: Rough size
+      options:
+        - 1 ticket
+        - 2-5 tickets
+        - more than 5 tickets
+  - type: input
+    id: target-update
+    attributes:
+      label: Target update
+      description: Leave blank for the next one.

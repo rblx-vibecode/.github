@@ -1,0 +1,49 @@
+name: Finding
+description: A playtest result, a bug or an improvement. Always lands in Triage, never Ready.
+title: "[Finding] "
+labels: [finding]
+projects: ["rblx-vibecode/2"]
+body:
+  - type: input
+    id: game
+    attributes:
+      label: Game
+      placeholder: game-<slug>
+    validations:
+      required: true
+  - type: input
+    id: milestone
+    attributes:
+      label: Milestone and playtest round
+      placeholder: "M1, round 2 of 3"
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - bug
+        - QOL
+        - content
+        - decoration
+        - story
+        - other
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: For bugs, add repro steps. For improvements, add what you'd change and why.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: execute_luau state checks and console output first; screenshots only for UI and visual issues.
+      render: text
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Suggested severity
+      options: [P0, P1, P2, P3]
